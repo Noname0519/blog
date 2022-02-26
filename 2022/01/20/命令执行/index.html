@@ -2,149 +2,205 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Security">
     <meta name="description" content="Code for fun, Hack for world">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
+    <meta name="author" content="noname">
+    
     <title>
         
-        命令执行 - undefined
+            命令执行 |
         
+        Noname&#39;s Blog
     </title>
-
-    <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="/css/style.css">
 
+    <link rel="shortcut icon" href="http://noname-image.test.upcdn.net/avatar.jpg">
     
-<link rel="stylesheet" href="/css/gitment.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"noname0519.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":false},"style":{"primary_color":"#669999","avatar":"http://noname-image.test.upcdn.net/avatar.jpg","favicon":"http://noname-image.test.upcdn.net/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Code for fun, Hack for world"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
+
 <body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i> Code for fun, Hack for world </i>
-</div>
-
-<div class="index-container">
+<div class="progress-bar-container">
     
-    <div class="index-left">
-        <meta name="referrer" content="no-referrer-when-downgrade">
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <!-- <img src="/http://noname-image.test.upcdn.net/avatar.jpg" /> -->
-            <img src="http://noname-image.test.upcdn.net/avatar.jpg" />
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Noname&#39;s Blog
+            </a>
         </div>
-        <div class="name">
-            <i>Noname</i>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>HOME</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>TAGS</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>ARCHIVES</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>ABOUT</span>
-                </a>
-            </li>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
             
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>SEARCH</span>
-                </a>
-            </li>
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
             
         </ul>
     </div>
-    
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-text">命令执行</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-text">PHP命令执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AB%E6%9C%89%E8%AF%A5%E6%BC%8F%E6%B4%9E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A1%86%E6%9E%B6"><span class="toc-text">含有该漏洞的一些框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%95%E8%BF%87%E6%89%8B%E6%AE%B5"><span class="toc-text">常用绕过手段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E7%A9%BA%E6%A0%BC"><span class="toc-text">绕过空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%95%8F%E6%84%9F%E5%AD%97%E7%AC%A6"><span class="toc-text">绕过敏感字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#base64%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="toc-text">base64编码绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">绕过长度限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%83%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">七字符长度限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">五字符长度限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">四字符长度限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BE%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5"><span class="toc-text">无回显命令注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BC%B9shell"><span class="toc-text">反弹shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E5%A4%96%E5%B8%A6"><span class="toc-text">HTTP外带</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dnslog%E5%A4%96%E5%B8%A6"><span class="toc-text">dnslog外带</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6%E5%90%8E%E5%86%8D%E8%AE%BF%E9%97%AE"><span class="toc-text">写入文件后再访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9B%B2%E6%B3%A8"><span class="toc-text">命令盲注</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8"><span class="toc-text">布尔盲注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8"><span class="toc-text">时间盲注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%BB%95%E8%BF%87WAF%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84tips"><span class="toc-text">一些绕过WAF防火墙的tips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CTF-Hub-RCE"><span class="toc-text">CTF-Hub RCE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-%E6%97%A0%E8%BF%87%E6%BB%A4"><span class="toc-text">命令注入-无过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4cat"><span class="toc-text">过滤cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%A9%BA%E6%A0%BC"><span class="toc-text">过滤空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%9B%AE%E5%BD%95%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-text">过滤目录分隔符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">过滤运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E8%BF%87%E6%BB%A4%E7%BB%83%E4%B9%A0"><span class="toc-text">综合过滤练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GXY-CTF-PingPingPing"><span class="toc-text">GXY-CTF PingPingPing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BJD-CTF-duangshell"><span class="toc-text">BJD-CTF duangshell</span></a></li></ol></li></ol></li></ol>
-</div>
-    
-</div>
 
+    <div class="window-mask"></div>
 
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">search</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
+</header>
+
 
         </div>
-    </div>
-</div>
 
-        <div class="index-about-mobile">
-            <i> Code for fun, Hack for world </i>
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">命令执行</span>
         </div>
-    </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="http://noname-image.test.upcdn.net/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">noname</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-20 11:11:35</span>
+        <span class="mobile">2022-01-20 11:11</span>
+    </span>
     
-    <div class="index-middle">
-        <!-- Main Content -->
-        
-
-
-<div class="post-container">
-    <div class="post-title">
-        命令执行
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">Post：<span>2022-01-20 11:11:35</span></span>
-        
-        <span class="attr">Tags：/
-        
-        <a class="tag" href="/tags/#web" title="web">web</a>
-        <span>/</span>
-        
-        
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/web/">web</a>&nbsp;
+                    </li>
+                
+            </ul>
         </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <h1 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h1><p>目前了解的知识还有限，先简单总结一些有遇到过的<br>以后遇到新题目会补充</p>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.3k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>11 Mins</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h1><p>目前了解的知识还有限，先简单总结一些有遇到过的<br>以后遇到新题目会补充</p>
 <h2 id="PHP命令执行"><a href="#PHP命令执行" class="headerlink" title="PHP命令执行"></a>PHP命令执行</h2><p>相关常见函数：<br><strong>${php代码}</strong><br><strong>assert()</strong><br>普通调用</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> assert(<span class="variable">$_POST</span>[<span class="string">&#x27;a&#x27;</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -324,65 +380,208 @@
 <p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/2548">https://xz.aliyun.com/t/2548</a></p>
 <p><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/8125#toc-2">https://xz.aliyun.com/t/8125#toc-2</a></p>
 
+        </div>
+
         
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
 
-        <div id="lv-container">
-        </div>
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/web/">#web</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/20/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">php文件包含漏洞</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/01/20/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">SSTI模板注入</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
 
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">noname</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
     </div>
-</div>
-
-
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
-    </ul>
-    
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">命令执行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="nav-number">1.1.</span> <span class="nav-text">PHP命令执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AB%E6%9C%89%E8%AF%A5%E6%BC%8F%E6%B4%9E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A1%86%E6%9E%B6"><span class="nav-number">1.2.</span> <span class="nav-text">含有该漏洞的一些框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%95%E8%BF%87%E6%89%8B%E6%AE%B5"><span class="nav-number">1.3.</span> <span class="nav-text">常用绕过手段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E7%A9%BA%E6%A0%BC"><span class="nav-number">1.3.1.</span> <span class="nav-text">绕过空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E6%95%8F%E6%84%9F%E5%AD%97%E7%AC%A6"><span class="nav-number">1.3.2.</span> <span class="nav-text">绕过敏感字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base64%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="nav-number">1.3.3.</span> <span class="nav-text">base64编码绕过</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="nav-number">1.3.4.</span> <span class="nav-text">绕过长度限制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%83%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">七字符长度限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%94%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="nav-number">1.3.4.2.</span> <span class="nav-text">五字符长度限制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9B%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="nav-number">1.3.4.3.</span> <span class="nav-text">四字符长度限制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BE%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5"><span class="nav-number">1.4.</span> <span class="nav-text">无回显命令注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%BC%B9shell"><span class="nav-number">1.4.1.</span> <span class="nav-text">反弹shell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E5%A4%96%E5%B8%A6"><span class="nav-number">1.4.2.</span> <span class="nav-text">HTTP外带</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dnslog%E5%A4%96%E5%B8%A6"><span class="nav-number">1.4.3.</span> <span class="nav-text">dnslog外带</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6%E5%90%8E%E5%86%8D%E8%AE%BF%E9%97%AE"><span class="nav-number">1.4.4.</span> <span class="nav-text">写入文件后再访问</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E7%9B%B2%E6%B3%A8"><span class="nav-number">1.5.</span> <span class="nav-text">命令盲注</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8"><span class="nav-number">1.5.1.</span> <span class="nav-text">布尔盲注</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8"><span class="nav-number">1.5.2.</span> <span class="nav-text">时间盲注</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%BB%95%E8%BF%87WAF%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84tips"><span class="nav-number">1.6.</span> <span class="nav-text">一些绕过WAF防火墙的tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CTF-Hub-RCE"><span class="nav-number">1.7.</span> <span class="nav-text">CTF-Hub RCE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-%E6%97%A0%E8%BF%87%E6%BB%A4"><span class="nav-number">1.7.1.</span> <span class="nav-text">命令注入-无过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4cat"><span class="nav-number">1.7.2.</span> <span class="nav-text">过滤cat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E7%A9%BA%E6%A0%BC"><span class="nav-number">1.7.3.</span> <span class="nav-text">过滤空格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E7%9B%AE%E5%BD%95%E5%88%86%E9%9A%94%E7%AC%A6"><span class="nav-number">1.7.4.</span> <span class="nav-text">过滤目录分隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%87%E6%BB%A4%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.5.</span> <span class="nav-text">过滤运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E8%BF%87%E6%BB%A4%E7%BB%83%E4%B9%A0"><span class="nav-number">1.7.6.</span> <span class="nav-text">综合过滤练习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GXY-CTF-PingPingPing"><span class="nav-number">1.7.7.</span> <span class="nav-text">GXY-CTF PingPingPing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BJD-CTF-duangshell"><span class="nav-number">1.7.8.</span> <span class="nav-text">BJD-CTF duangshell</span></a></li></ol></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
 
 
 
 </body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
 </html>

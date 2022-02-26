@@ -2,143 +2,194 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Security">
     <meta name="description" content="Code for fun, Hack for world">
-    <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
+    <meta name="author" content="noname">
+    
     <title>
         
-        SSTI模板注入 - undefined
+            SSTI模板注入 |
         
+        Noname&#39;s Blog
     </title>
-
-    <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/aircloud.css">
+<link rel="stylesheet" href="/css/style.css">
 
+    <link rel="shortcut icon" href="http://noname-image.test.upcdn.net/avatar.jpg">
     
-<link rel="stylesheet" href="/css/gitment.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"noname0519.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":false},"style":{"primary_color":"#669999","avatar":"http://noname-image.test.upcdn.net/avatar.jpg","favicon":"http://noname-image.test.upcdn.net/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Code for fun, Hack for world"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
+
 <body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i> Code for fun, Hack for world </i>
-</div>
-
-<div class="index-container">
+<div class="progress-bar-container">
     
-    <div class="index-left">
-        <meta name="referrer" content="no-referrer-when-downgrade">
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar ">
-            <!-- <img src="/http://noname-image.test.upcdn.net/avatar.jpg" /> -->
-            <img src="http://noname-image.test.upcdn.net/avatar.jpg" />
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Noname&#39;s Blog
+            </a>
         </div>
-        <div class="name">
-            <i>Noname</i>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>HOME</span>
-                </a>
-            </li>
-            <li >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>TAGS</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>ARCHIVES</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>ABOUT</span>
-                </a>
-            </li>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
             
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>SEARCH</span>
-                </a>
-            </li>
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
             
         </ul>
     </div>
-    
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5"><span class="toc-text">SSTI模板注入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#python%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5"><span class="toc-text">python中的模板注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="toc-text">魔术方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">基本流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%80%9D%E8%B7%AF"><span class="toc-text">绕过思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5"><span class="toc-text">php中的模板注入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5"><span class="toc-text">java中的模板注入</span></a></li></ol></li></ol>
-</div>
-    
-</div>
 
+    <div class="window-mask"></div>
 
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">search</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
+</header>
+
 
         </div>
-    </div>
-</div>
 
-        <div class="index-about-mobile">
-            <i> Code for fun, Hack for world </i>
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">SSTI模板注入</span>
         </div>
-    </div>
-    
-    <div class="index-middle">
-        <!-- Main Content -->
+
         
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="http://noname-image.test.upcdn.net/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">noname</span>
+                        
+                            <span class="author-label">Lv2</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-01-20 11:01:16</span>
+        <span class="mobile">2022-01-20 11:01</span>
+    </span>
+    
+    
 
-
-<div class="post-container">
-    <div class="post-title">
-        SSTI模板注入
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">Post：<span>2022-01-20 11:01:16</span></span>
-        
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>257 Words</span>
         </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content ">
-        <h1 id="SSTI模板注入"><a href="#SSTI模板注入" class="headerlink" title="SSTI模板注入"></a>SSTI模板注入</h1><p>其实之前整理过了，但是题目难度今时不同往日了（x</p>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="SSTI模板注入"><a href="#SSTI模板注入" class="headerlink" title="SSTI模板注入"></a>SSTI模板注入</h1><p>其实之前整理过了，但是题目难度今时不同往日了（x</p>
 <p>主要以另外的方式记录一些新学习的payload、绕过限制的方式</p>
 <h2 id="python中的模板注入"><a href="#python中的模板注入" class="headerlink" title="python中的模板注入"></a>python中的模板注入</h2><h3 id="魔术方法"><a href="#魔术方法" class="headerlink" title="魔术方法"></a>魔术方法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">__dict__ 保存类实例或对象实例的属性变量键值对字典</span><br><span class="line">__class__ 返回类型所属的对象 </span><br><span class="line">__mro__ 返回一个包含对象所继承的基类元组，方法在解析时按照元组的顺序解析。</span><br><span class="line">__base__ 返回该对象所继承的基类 // __base__和__mro__都是用来寻找基类的 </span><br><span class="line">__subclasses__ 每个新类都保留了子类的引用，这个方法返回一个类中仍然可用的的引用的列表 </span><br><span class="line">__init__ 类的初始化方法 </span><br><span class="line">__globals__ 对包含函数全局变量的字典的引用</span><br></pre></td></tr></table></figure>
 
@@ -147,65 +198,200 @@
 
 
 <h3 id="绕过思路"><a href="#绕过思路" class="headerlink" title="绕过思路"></a>绕过思路</h3><h2 id="php中的模板注入"><a href="#php中的模板注入" class="headerlink" title="php中的模板注入"></a>php中的模板注入</h2><h2 id="java中的模板注入"><a href="#java中的模板注入" class="headerlink" title="java中的模板注入"></a>java中的模板注入</h2>
+        </div>
+
         
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
 
-        <div id="lv-container">
-        </div>
+        
 
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/20/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">命令执行</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/01/20/SQL%E6%B3%A8%E5%85%A5-%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2%E5%8F%8A%E6%B3%A8%E5%85%A5%E5%A4%87%E5%BF%98/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">SQL注入-基本查询及注入备忘</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
     </div>
 </div>
 
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">noname</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
     </div>
-</div>
-
-
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
-    </ul>
-    
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">SSTI模板注入</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">python中的模板注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AD%94%E6%9C%AF%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.1.</span> <span class="nav-text">魔术方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">基本流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.3.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%95%E8%BF%87%E6%80%9D%E8%B7%AF"><span class="nav-number">1.1.4.</span> <span class="nav-text">绕过思路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5"><span class="nav-number">1.2.</span> <span class="nav-text">php中的模板注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5"><span class="nav-number">1.3.</span> <span class="nav-text">java中的模板注入</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/code-copy.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
 
 
 
 </body>
-
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = true
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
-<script src="/js/index.js"></script>
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
 </html>
