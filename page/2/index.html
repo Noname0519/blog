@@ -74,7 +74,7 @@
 </ul>
 </div></div>
 
-<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/2022/05/26/notes-for-parse-webshll/">notes for parse php webshell</a></div><div class="more-item"><a class="title" href="/2022/01/20/notes-for-php-parser/">notes for php-parser</a></div><div class="more-item"><a class="title" href="/2022/03/17/NodeJs-and-Sandbox-escape/">NodeJs-and-Sandbox-escape</a></div><div class="more-item"><a class="title" href="/2022/01/20/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/">php文件包含漏洞</a></div><div class="more-item"><a class="title" href="/2022/01/20/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/">SSTI模板注入</a></div></div></div>
+<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/2022/11/12/docker-for-ctf/">docker for ctf</a></div><div class="more-item"><a class="title" href="/2022/05/26/notes-for-parse-webshll/">notes for parse php webshell</a></div><div class="more-item"><a class="title" href="/2022/01/20/notes-for-php-parser/">notes for php-parser</a></div><div class="more-item"><a class="title" href="/2022/03/17/NodeJs-and-Sandbox-escape/">NodeJs-and-Sandbox-escape</a></div><div class="more-item"><a class="title" href="/2022/01/20/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/">php文件包含漏洞</a></div></div></div>
 
 <div class="widget-wrap" id="github-user"><div class="widget-body stellar-ghinfo-api" api="https://api.github.com/users/noname0519"><p class="username" ff="title" type="text" id="name">&nbsp;</p><p class="bio" type="text" id="bio">&nbsp;</p><div class="buttons"><a class="btn" target="_blank" rel="noopener" href="https://github.com/noname0519?tab=followers"><span class="title" type="text" id="followers">0</span><span class="desc">followers</span></a><a class="btn" target="_blank" rel="noopener" href="https://github.com/noname0519?tab=following"><span class="title" type="text" id="following">0</span><span class="desc">following</span></a><a class="btn" target="_blank" rel="noopener" href="https://github.com/noname0519?tab=repositories"><span class="title" type="text" id="public_repos">0</span><span class="desc">repos</span></a></div><a class="follow" target="_blank" rel="noopener" href="https://github.com/noname0519"><svg aria-hidden="true" role="img" class="color-icon-primary" viewBox="0 0 16 16" width="1rem" height="1rem" fill="currentColor" style="display:inline-block;user-select:none;vertical-align:text-bottom;overflow:visible"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>Follow</a></div></div>
 </div>
@@ -114,7 +114,14 @@
   </nav>
 </div>
 
-  <div class="post-list post"><a class="post-card post " href="/2022/01/20/php%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0/">
+  <div class="post-list post"><a class="post-card post " href="/2022/01/20/php%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A7%A3%E6%9E%90trick/">
+<article class="md"><h2 class="post-title">php字符串解析trick</h2><div class="excerpt"><p>php字符串解析trickparse_str将字符串解析成多个变量
+
+parse_str( string $encoded_string[, array &amp;$result] ) : void
+
+主要作用直接放例子（这里乱起的名字）
+1234567891011$str = &quot;id=noname&quot;;parse_str($str, $output);print_r($o...</p></div><div class="meta cap"><span class="cap" id="post-meta">发布于&nbsp;<time datetime="2022-01-20T03:00:34.000Z">2022-01-20</time></span></div></article>
+</a><a class="post-card post " href="/2022/01/20/php%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0/">
 <article class="md"><h2 class="post-title">php伪随机数</h2><div class="excerpt"><p>php伪随机数&#x2F;&#x2F; 图裂题目给了一个简短的字符串，但是一共有二十位，所以后面有一部分需要自己爆出来爆源码的多种姿势后。。
 源码显示随机生成了一个字符串，所以要通过伪随机数的预测来破解相关函数：
 12mt_rand( void) : intmt_rand( int $min, int $max) : int
