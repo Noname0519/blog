@@ -3,6 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.0.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.15.1">
   <meta charset="utf-8">
   
 
@@ -18,7 +19,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
-  <title>命令执行 - Noname</title>
+  
+  <title>命令执行</title>
 
   
     <meta name="description" content="命令执行目前了解的知识还有限，先简单总结一些有遇到过的以后遇到新题目会补充 PHP命令执行相关常见函数：${php代码}assert()普通调用 1&lt;?php assert($_POST[&amp;#x27;a&amp;#x27;]);?&gt;  动态调用 1234&lt;?php    $a &#x3D; &amp;#x27;assert&amp;#x27;;    $a($_POST[&amp;#x27;a&amp;#x27;]);?&gt;">
@@ -74,12 +76,17 @@
 <header class="header">
 
 <div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Noname</div><div class="sub cap">Code for fun, Hack for world</div></a></div>
-<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/notes/">Notes</a><a class="nav-item" href="/about/">About</a></nav></header>
+
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/notes/">Notes</a><a class="nav-item" href="/about/">About</a></nav>
+</header>
 
 
 <div class="widgets">
 
-<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-text">PHP命令执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AB%E6%9C%89%E8%AF%A5%E6%BC%8F%E6%B4%9E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A1%86%E6%9E%B6"><span class="toc-text">含有该漏洞的一些框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%95%E8%BF%87%E6%89%8B%E6%AE%B5"><span class="toc-text">常用绕过手段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E7%A9%BA%E6%A0%BC"><span class="toc-text">绕过空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%95%8F%E6%84%9F%E5%AD%97%E7%AC%A6"><span class="toc-text">绕过敏感字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#base64%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="toc-text">base64编码绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">绕过长度限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%83%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">七字符长度限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">五字符长度限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">四字符长度限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BE%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5"><span class="toc-text">无回显命令注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BC%B9shell"><span class="toc-text">反弹shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E5%A4%96%E5%B8%A6"><span class="toc-text">HTTP外带</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dnslog%E5%A4%96%E5%B8%A6"><span class="toc-text">dnslog外带</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6%E5%90%8E%E5%86%8D%E8%AE%BF%E9%97%AE"><span class="toc-text">写入文件后再访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9B%B2%E6%B3%A8"><span class="toc-text">命令盲注</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8"><span class="toc-text">布尔盲注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8"><span class="toc-text">时间盲注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%BB%95%E8%BF%87WAF%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84tips"><span class="toc-text">一些绕过WAF防火墙的tips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CTF-Hub-RCE"><span class="toc-text">CTF-Hub RCE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-%E6%97%A0%E8%BF%87%E6%BB%A4"><span class="toc-text">命令注入-无过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4cat"><span class="toc-text">过滤cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%A9%BA%E6%A0%BC"><span class="toc-text">过滤空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%9B%AE%E5%BD%95%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-text">过滤目录分隔符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">过滤运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E8%BF%87%E6%BB%A4%E7%BB%83%E4%B9%A0"><span class="toc-text">综合过滤练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GXY-CTF-PingPingPing"><span class="toc-text">GXY-CTF PingPingPing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BJD-CTF-duangshell"><span class="toc-text">BJD-CTF duangshell</span></a></li></ol></li></ol></div></div></div>
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">命令执行</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C"><span class="toc-text">PHP命令执行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AB%E6%9C%89%E8%AF%A5%E6%BC%8F%E6%B4%9E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%A1%86%E6%9E%B6"><span class="toc-text">含有该漏洞的一些框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%95%E8%BF%87%E6%89%8B%E6%AE%B5"><span class="toc-text">常用绕过手段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E7%A9%BA%E6%A0%BC"><span class="toc-text">绕过空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E6%95%8F%E6%84%9F%E5%AD%97%E7%AC%A6"><span class="toc-text">绕过敏感字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#base64%E7%BC%96%E7%A0%81%E7%BB%95%E8%BF%87"><span class="toc-text">base64编码绕过</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%95%E8%BF%87%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">绕过长度限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%83%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">七字符长度限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%94%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">五字符长度限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E5%AD%97%E7%AC%A6%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6"><span class="toc-text">四字符长度限制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%9B%9E%E6%98%BE%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5"><span class="toc-text">无回显命令注入</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BC%B9shell"><span class="toc-text">反弹shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%E5%A4%96%E5%B8%A6"><span class="toc-text">HTTP外带</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dnslog%E5%A4%96%E5%B8%A6"><span class="toc-text">dnslog外带</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6%E5%90%8E%E5%86%8D%E8%AE%BF%E9%97%AE"><span class="toc-text">写入文件后再访问</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E7%9B%B2%E6%B3%A8"><span class="toc-text">命令盲注</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8"><span class="toc-text">布尔盲注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8"><span class="toc-text">时间盲注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%BB%95%E8%BF%87WAF%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84tips"><span class="toc-text">一些绕过WAF防火墙的tips</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CTF-Hub-RCE"><span class="toc-text">CTF-Hub RCE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E6%B3%A8%E5%85%A5-%E6%97%A0%E8%BF%87%E6%BB%A4"><span class="toc-text">命令注入-无过滤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4cat"><span class="toc-text">过滤cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%A9%BA%E6%A0%BC"><span class="toc-text">过滤空格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E7%9B%AE%E5%BD%95%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-text">过滤目录分隔符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%BB%A4%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">过滤运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E8%BF%87%E6%BB%A4%E7%BB%83%E4%B9%A0"><span class="toc-text">综合过滤练习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GXY-CTF-PingPingPing"><span class="toc-text">GXY-CTF PingPingPing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BJD-CTF-duangshell"><span class="toc-text">BJD-CTF duangshell</span></a></li></ol></li></ol></div></div></div>
+
+
 
 
 </div>
@@ -282,7 +289,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body fs14"><a id="next" href="/2022/01/20/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/">SSTI模板注入<span class="note">较早</span></a><div class="line"></div><a id="prev" href="/2022/01/20/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/">php文件包含漏洞<span class="note">较新</span></a></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/01/20/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E/">php文件包含漏洞</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2022/01/20/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/">SSTI模板注入</a></div></section></div>
 
 
 
@@ -396,7 +403,8 @@
       }
     }
   };
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.10.0';
+  stellar.version = '1.15.1';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.15.1';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -413,7 +421,7 @@
   };
 
   // stellar js
-  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js"});
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
 
   stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
   // optional plugins

@@ -3,6 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.0.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.15.1">
   <meta charset="utf-8">
   
 
@@ -18,7 +19,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
-  <title>php反序列化 - Noname</title>
+  
+  <title>php反序列化</title>
 
   
     <meta name="description" content="php反序列化相关概念序列化序列化的过程是将各种类和属性的信息转化成便于存储的字节流，也就是将数据信息进行一定格式的压缩存储 1234567891011121314151617181920&lt;?php	class Person&amp;#123;		public $name &#x3D; &amp;#x27;noname&amp;#x27;;		protected $id &#x3D; &amp;#x27;666&amp;#x27;;		private">
@@ -72,12 +74,17 @@
 <header class="header">
 
 <div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Noname</div><div class="sub cap">Code for fun, Hack for world</div></a></div>
-<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/notes/">Notes</a><a class="nav-item" href="/about/">About</a></nav></header>
+
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/notes/">Notes</a><a class="nav-item" href="/about/">About</a></nav>
+</header>
 
 
 <div class="widgets">
 
-<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">反序列化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E"><span class="toc-text">php反序列化漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pop%E9%93%BE"><span class="toc-text">pop链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example1"><span class="toc-text">Example1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XCTF-Web-php-unserialize"><span class="toc-text">XCTF-Web_php_unserialize</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phar%E6%89%A9%E5%B1%95%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%94%BB%E5%87%BB%E9%9D%A2"><span class="toc-text">phar扩展反序列化攻击面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#phar%E6%96%87%E4%BB%B6"><span class="toc-text">phar文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%97%E5%BD%B1%E5%93%8D%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">受影响的函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90phar%E6%96%87%E4%BB%B6"><span class="toc-text">生成phar文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E9%80%A0phar%E6%96%87%E4%BB%B6"><span class="toc-text">伪造phar文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bypass"><span class="toc-text">bypass</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%AD%97%E7%AC%A6%E9%80%83%E9%80%B8"><span class="toc-text">反序列化字符逃逸</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-text">规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%A2%9E%E5%8A%A0%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">字符增加的情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">session反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#session%E5%AD%98%E5%82%A8%E6%9C%BA%E5%88%B6"><span class="toc-text">session存储机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E7%B1%BB%E5%88%A9%E7%94%A8"><span class="toc-text">原生类利用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SoapClient-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">SoapClient+反序列化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1%E6%96%B9%E6%B3%95"><span class="toc-text">防御方法</span></a></li></ol></div></div></div>
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">php反序列化</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E6%A6%82%E5%BF%B5"><span class="toc-text">相关概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">反序列化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E"><span class="toc-text">php反序列化漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pop%E9%93%BE"><span class="toc-text">pop链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Example1"><span class="toc-text">Example1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XCTF-Web-php-unserialize"><span class="toc-text">XCTF-Web_php_unserialize</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#phar%E6%89%A9%E5%B1%95%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%94%BB%E5%87%BB%E9%9D%A2"><span class="toc-text">phar扩展反序列化攻击面</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#phar%E6%96%87%E4%BB%B6"><span class="toc-text">phar文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%97%E5%BD%B1%E5%93%8D%E7%9A%84%E5%87%BD%E6%95%B0"><span class="toc-text">受影响的函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90phar%E6%96%87%E4%BB%B6"><span class="toc-text">生成phar文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%AA%E9%80%A0phar%E6%96%87%E4%BB%B6"><span class="toc-text">伪造phar文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#bypass"><span class="toc-text">bypass</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E5%AD%97%E7%AC%A6%E9%80%83%E9%80%B8"><span class="toc-text">反序列化字符逃逸</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-text">规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%A2%9E%E5%8A%A0%E7%9A%84%E6%83%85%E5%86%B5"><span class="toc-text">字符增加的情况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#session%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">session反序列化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#session%E5%AD%98%E5%82%A8%E6%9C%BA%E5%88%B6"><span class="toc-text">session存储机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E7%B1%BB%E5%88%A9%E7%94%A8"><span class="toc-text">原生类利用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SoapClient-%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-text">SoapClient+反序列化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1%E6%96%B9%E6%B3%95"><span class="toc-text">防御方法</span></a></li></ol></div></div></div>
+
+
 
 
 </div>
@@ -282,7 +289,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body fs14"><a id="next" href="/2022/01/19/hello-world/">Hello World<span class="note">较早</span></a><div class="line"></div><a id="prev" href="/2022/01/20/php%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0/">php伪随机数<span class="note">较新</span></a></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/01/20/php%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0/">php伪随机数</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2022/01/19/hello-world/">Hello World</a></div></section></div>
 
 
 
@@ -396,7 +403,8 @@
       }
     }
   };
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.10.0';
+  stellar.version = '1.15.1';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.15.1';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -413,7 +421,7 @@
   };
 
   // stellar js
-  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js"});
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
 
   stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
   // optional plugins
