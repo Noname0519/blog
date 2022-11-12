@@ -23,16 +23,17 @@
   <title>docker for ctf</title>
 
   
-    <meta name="description" content="Code for fun, Hack for world">
+    <meta name="description" content="Docker for ctfdocker installation in the vpsCentos:  1curl -sSL https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker | sh Start the docker 1systemctl start docker  Usage of container-i交互式操作 -t终端 ubuntu镜像 &#x2F;bin&#x2F;bash交互式shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="docker for ctf">
 <meta property="og:url" content="https://noname0519.com/2022/11/12/docker-for-ctf/index.html">
 <meta property="og:site_name" content="Noname">
-<meta property="og:description" content="Code for fun, Hack for world">
+<meta property="og:description" content="Docker for ctfdocker installation in the vpsCentos:  1curl -sSL https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker | sh Start the docker 1systemctl start docker  Usage of container-i交互式操作 -t终端 ubuntu镜像 &#x2F;bin&#x2F;bash交互式shell">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-12T01:04:10.000Z">
-<meta property="article:modified_time" content="2022-11-12T01:04:10.713Z">
+<meta property="article:modified_time" content="2022-11-12T12:47:16.911Z">
 <meta property="article:author" content="Noname">
+<meta property="article:tag" content="ctf">
 <meta name="twitter:card" content="summary">
   
   
@@ -73,15 +74,22 @@
 <div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Noname</div><div class="sub cap">Code for fun, Hack for world</div></a></div>
 
 
-<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/book/">btn.books</a><a class="nav-item" href="/links/">Link</a><a class="nav-item" href="/about/">About</a></nav>
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/books/">Notes</a><a class="nav-item" href="/links/">Link</a><a class="nav-item" href="/about/">About</a></nav>
 </header>
 
 
-<div class="widgets"></div>
+<div class="widgets">
+
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">docker for ctf</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-installation-in-the-vps"><span class="toc-text">docker installation in the vps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage-of-container"><span class="toc-text">Usage of container</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#run-a-web-container"><span class="toc-text">run a web container</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Usage-of-images"><span class="toc-text">Usage of images</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#command-for-container"><span class="toc-text">command for container</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#list-containers"><span class="toc-text">list containers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#create-containers"><span class="toc-text">create containers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#start-and-stop"><span class="toc-text">start and stop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#restart"><span class="toc-text">restart</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete-x2F-remove"><span class="toc-text">delete&#x2F;remove</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#attach"><span class="toc-text">attach</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#process-in-the-container"><span class="toc-text">process in the container</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#container-info"><span class="toc-text">container info</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#import-and-export"><span class="toc-text">import and export</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Local-image-management"><span class="toc-text">Local image management</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#create-container-by-images"><span class="toc-text">create container by images</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#image"><span class="toc-text">image</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pull-images"><span class="toc-text">pull images</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list-images"><span class="toc-text">list images</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#remove-images"><span class="toc-text">remove images</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Custom-images-using-Dockerfile"><span class="toc-text">Custom images using Dockerfile</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FROM-Specify-the-base-image"><span class="toc-text">FROM - Specify the base image</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RUN"><span class="toc-text">RUN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Build-images"><span class="toc-text">Build images</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-text">Example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#For-CTF"><span class="toc-text">For CTF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#no-dockerfile"><span class="toc-text">no dockerfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Use-amp-Write-Dockerfile"><span class="toc-text">Use &amp; Write Dockerfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker-compose-yml"><span class="toc-text">docker-compose.yml</span></a></li></ol></li></ol></div></div></div>
+
+
+
+
+</div>
 <footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Noname0519" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.3/social/08a41b181ce68.svg"/></a></div></footer>
 
     </aside>
-    <div class='l_main list'>
+    <div class='l_main'>
       
 
       
@@ -91,7 +99,179 @@
 
 <article class='content md post'>
 <h1 class="article-title"><span>docker for ctf</span></h1>
+<h1 id="Docker-for-ctf"><a href="#Docker-for-ctf" class="headerlink" title="Docker for ctf"></a>Docker for ctf</h1><h2 id="docker-installation-in-the-vps"><a href="#docker-installation-in-the-vps" class="headerlink" title="docker installation in the vps"></a>docker installation in the vps</h2><p>Centos: </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL http<span class="variable">s:</span>//<span class="built_in">get</span>.daocloud.io/docker | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<p>Start the docker</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="literal">start</span> docker</span><br></pre></td></tr></table></figure>
 
+<h2 id="Usage-of-container"><a href="#Usage-of-container" class="headerlink" title="Usage of container"></a>Usage of container</h2><p><code>-i交互式操作 -t终端 ubuntu镜像 /bin/bash交互式shell</code></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu</span><br><span class="line"></span><br><span class="line">docker run -it ubuntu <span class="regexp">/bin/</span>bash</span><br><span class="line"></span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
+<p>后台运行<br><code>-d默认不会进入容器</code></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name ubuntu-test ubuntu <span class="regexp">/bin/</span>bash</span><br><span class="line"></span><br><span class="line">docker exec -it &lt;containId&gt; <span class="regexp">/bin/</span>bash</span><br></pre></td></tr></table></figure>
+<h3 id="run-a-web-container"><a href="#run-a-web-container" class="headerlink" title="run a web container"></a>run a web container</h3><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> run -d -p <span class="number">2333</span>:<span class="number">80</span> -p <span class="number">3308</span>:<span class="number">3306</span> tutum/lamp</span><br></pre></td></tr></table></figure>
+
+<h2 id="Usage-of-images"><a href="#Usage-of-images" class="headerlink" title="Usage of images"></a>Usage of images</h2><p>Get the images from DockerHub</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull <span class="comment">[option]</span> <span class="comment">[Docker Registry 地址<span class="comment">[:端口号]</span>/]</span>仓库名<span class="comment">[:标签]</span></span><br><span class="line"></span><br><span class="line">docker pull ubuntu:18.04</span><br></pre></td></tr></table></figure>
+
+<h2 id="command-for-container"><a href="#command-for-container" class="headerlink" title="command for container"></a>command for container</h2><h3 id="list-containers"><a href="#list-containers" class="headerlink" title="list containers"></a>list containers</h3><p>View the containers information</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker ps</span><br><span class="line">docker ps -<span class="keyword">a</span></span><br><span class="line">docker ps -l<span class="comment"> // list the latest container</span></span><br><span class="line">docker ps -n=<span class="number">2</span><span class="comment"> // list the last 2 containers</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CONTANER ID</td>
+<td>容器id，唯一标识符，64位的十六进制整数</td>
+</tr>
+<tr>
+<td>IMAGE</td>
+<td>创建容器时使用的镜像</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>容器最后运行的命令</td>
+</tr>
+<tr>
+<td>CREATED</td>
+<td>创建容器的时间</td>
+</tr>
+<tr>
+<td>STATUS</td>
+<td>容器的状态</td>
+</tr>
+<tr>
+<td>PORTS</td>
+<td>容器对外开放的端口</td>
+</tr>
+<tr>
+<td>NAMES</td>
+<td>容器的名字，有默认值</td>
+</tr>
+</tbody></table>
+<h3 id="create-containers"><a href="#create-containers" class="headerlink" title="create containers"></a>create containers</h3><p>create -&gt; run</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">create</span> xxx</span><br><span class="line"></span><br><span class="line">docker <span class="built_in">create</span> [<span class="comment">--name=xxx] xxx</span></span><br></pre></td></tr></table></figure>
+
+<p>create + run</p>
+<p>后台型容器</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">run</span> <span class="comment">--name name -d -p [宿主机端口]:[容器端口] xxx</span></span><br><span class="line"></span><br><span class="line">docker <span class="built_in">run</span> <span class="comment">--name nginx1 -d -p 8080:80 nginx</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>name: 创建容器的名字<br>-d 容器在后台运行<br>-p 将容器的端口[port2]映射到宿主机的端口[port1]</p>
+</blockquote>
+<p>交互型容器</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="builtin-name">run</span> --name xxx -it xxx /bin/bash</span><br><span class="line"></span><br><span class="line">docker <span class="builtin-name">run</span> <span class="attribute">--name</span>=ubuntu1 -it ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+<p>-i 开发容器的标准输入(STDIN)<br>-t 为容器创建应该命令行终端<br>exit 可以退出终端</p>
+<h3 id="start-and-stop"><a href="#start-and-stop" class="headerlink" title="start and stop"></a>start and stop</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="literal">start</span> xxx</span><br><span class="line">docker <span class="literal">stop</span> xxx</span><br></pre></td></tr></table></figure>
+<p><code>xxx-&gt;name/id</code></p>
+<p>by default, the docker will not restart, <code>--restart</code> can be used to restart the container</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="builtin-name">run</span> <span class="attribute">--restart</span>=always --name nginx1 -d  -p 8080:80 nginx </span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>标志</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>no</td>
+<td>默认，不自动重启容器</td>
+</tr>
+<tr>
+<td>on:failue[:max-retries]</td>
+<td>非正常退出，可选参数：最大重启次数</td>
+</tr>
+<tr>
+<td>always</td>
+<td>始终重启容器，无论容器当时状态为何都会尝试重启</td>
+</tr>
+<tr>
+<td>ubless-stopped</td>
+<td>始终重启容器，docker守护进程启动时，若容器停止运行则不会去重启它</td>
+</tr>
+</tbody></table>
+<h3 id="restart"><a href="#restart" class="headerlink" title="restart"></a>restart</h3><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart <span class="comment">[OPTIONS]</span> <span class="keyword">CONTAINER</span> XXX</span><br></pre></td></tr></table></figure>
+<h3 id="delete-x2F-remove"><a href="#delete-x2F-remove" class="headerlink" title="delete&#x2F;remove"></a>delete&#x2F;remove</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker rm xxx</span></span><br></pre></td></tr></table></figure>
+<p>batch remove</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm <span class="constructor">$(<span class="params">docker</span> <span class="params">ps</span> -<span class="params">a</span> -<span class="params">q</span>)</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="attach"><a href="#attach" class="headerlink" title="attach"></a>attach</h3><p>For interactive containers.</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach xxx</span><br></pre></td></tr></table></figure>
+<p>The container would stop if exit.</p>
+<h3 id="process-in-the-container"><a href="#process-in-the-container" class="headerlink" title="process in the container"></a>process in the container</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it xxx <span class="regexp">/bin/</span>bash</span><br></pre></td></tr></table></figure>
+<p>-i：交互式操作<br>-t：终端<br>-d：让容器在后台运行<br>-p：将容器内部使用的网络端口映射到我们使用的主机上<br>指定端口映射</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">ip:</span>hostPort:containerPort</span><br><span class="line"><span class="symbol">ip:</span>:containerPort</span><br><span class="line"><span class="symbol">hostPort:</span>containerPort</span><br><span class="line">containerPort</span><br></pre></td></tr></table></figure>
+<p>It would not result in container stop if exit from the container.</p>
+<h3 id="container-info"><a href="#container-info" class="headerlink" title="container info"></a>container info</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// view the internal processes in the container</span></span><br><span class="line">docker top xxx</span><br><span class="line"></span><br><span class="line"><span class="comment">// view the container information</span></span><br><span class="line">docker <span class="keyword">inspect</span> xxx</span><br></pre></td></tr></table></figure>
+
+<p>The detail includes: <code>id</code>, <code>container name</code>, <code>environment variable</code>, <code>command</code>, <code>host config</code>, …<br>Some info can be viewed by set <code>-f</code> or <code>--format</code>.</p>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">// view the running status</span></span><br><span class="line"><span class="xml">docker inspect -f=&#x27;</span><span class="template-variable">&#123;&#123;<span class="name">.State.Running</span>&#125;&#125;</span><span class="xml">&#x27; xxx</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// view the container ip</span></span><br><span class="line"><span class="xml">docker inspect -f=&#x27;</span><span class="template-variable">&#123;&#123;<span class="name">.NetworkSettings.IPAddress</span>&#125;&#125;</span><span class="xml">&#x27; xxx</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// view the container name and id</span></span><br><span class="line"><span class="xml">docker inspect -f=&#x27;</span><span class="template-variable">&#123;&#123;<span class="name">.Name</span>&#125;&#125;</span><span class="xml"> </span><span class="template-variable">&#123;&#123;<span class="name">.ID</span>&#125;&#125;</span><span class="xml">&#x27; xxx</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">// view the host info</span></span><br><span class="line"><span class="xml">docker inspect -f=&#x27;</span><span class="template-variable">&#123;&#123;<span class="name">.HostConfig</span>&#125;&#125;</span><span class="xml"> </span><span class="template-variable">&#123;&#123;<span class="name">.ID</span>&#125;&#125;</span><span class="xml">&#x27; xxx</span></span><br></pre></td></tr></table></figure>
+
+<p>View the log</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker logs xxx</span><br><span class="line"></span><br><span class="line">docker logs -f <span class="attribute">--tail</span>=3 -t xxx</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>-f参数：跟踪日志输出<br>-t参数：显示时间戳<br>–tail：仅列出最新N条容器日志</p>
+</blockquote>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> run -d --name ubuntu<span class="number">1</span> ubuntu /bin/bash -c &#x27;for((i=<span class="number">0</span>;<span class="number">1</span>;i++));do echo $<span class="number">1</span>;sleep <span class="number">1</span>;done&#x27;</span><br></pre></td></tr></table></figure>
+<h3 id="import-and-export"><a href="#import-and-export" class="headerlink" title="import and export"></a>import and export</h3><p><strong>docker export</strong>把容器的文件系统以tar的格式导出到标准输出，使用&gt;命令将其定位到目标文件 xxx.tar，将容器保存到本地后就可以通过网络等方法将tar包分享给他人</p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">docker</span> ex<span class="keyword">port</span> xxx &gt; xxx.tar</span><br></pre></td></tr></table></figure>
+<p><strong>docker import</strong><br>import a local <code>tar</code> as image<br>res: generated image; &amp; tag </p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">cat</span> xxx.tar | docker <span class="keyword">import</span> - xxx/ubuntu:v1.0</span><br><span class="line"></span><br><span class="line"><span class="title">docker</span> <span class="keyword">import</span> url res:tag</span><br></pre></td></tr></table></figure>
+
+<h2 id="Local-image-management"><a href="#Local-image-management" class="headerlink" title="Local image management"></a>Local image management</h2><h3 id="create-container-by-images"><a href="#create-container-by-images" class="headerlink" title="create container by images"></a>create container by images</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br><span class="line"></span><br><span class="line">docker run -itd --name <span class="selector-attr">[name]</span> -<span class="selector-tag">p</span> <span class="number">8080</span>:<span class="number">80</span> <span class="selector-attr">[containerId]</span></span><br></pre></td></tr></table></figure>
+<h2 id="image"><a href="#image" class="headerlink" title="image"></a>image</h2><p>search image</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">search</span> xxx</span><br><span class="line">docker <span class="built_in">search</span> java</span><br></pre></td></tr></table></figure>
+
+<h3 id="pull-images"><a href="#pull-images" class="headerlink" title="pull images"></a>pull images</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker pull xxx</span></span><br></pre></td></tr></table></figure>
+
+<p>we can assign the wanted image tag and Docker Registry address </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull <span class="keyword">reg</span>.itmuch.<span class="keyword">com</span>/jav<span class="variable">a:7</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="list-images"><a href="#list-images" class="headerlink" title="list images"></a>list images</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker images</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="remove-images"><a href="#remove-images" class="headerlink" title="remove images"></a>remove images</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker rmi xxx</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Custom-images-using-Dockerfile"><a href="#Custom-images-using-Dockerfile" class="headerlink" title="Custom images using Dockerfile"></a>Custom images using Dockerfile</h2><h3 id="FROM-Specify-the-base-image"><a href="#FROM-Specify-the-base-image" class="headerlink" title="FROM - Specify the base image"></a>FROM - Specify the base image</h3><p>Many official images can be found in DockerHub</p>
+<p><strong>FROM scratch</strong> 不以任何镜像为基础，接下来所写的指令就是镜像的第一层</p>
+<h3 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a>RUN</h3><p>shell format RUN&lt;命令&gt;</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN echo <span class="string">&#x27;&lt;h1&gt;Hello&lt;/h1&gt;&#x27;</span> &gt; <span class="regexp">/usr/</span>share<span class="regexp">/nginx/</span>html/index.html</span><br></pre></td></tr></table></figure>
+<p>exec format RUN[“可执行文件”, “参数1”, “参数2”]<br>&amp;&amp;将各个命令串联、在行尾添加 \ 进行换行，行首 # 进行注释</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">RUN</span> buildDeps = <span class="string">&#x27;gcc libc6-dev make wget&#x27;</span> \</span><br><span class="line">            &amp;&amp;apt-<span class="builtin-name">get</span> install xxx</span><br><span class="line">            &amp;&amp;<span class="builtin-name">RUN</span> wget xxxx</span><br></pre></td></tr></table></figure>
+<h3 id="Build-images"><a href="#Build-images" class="headerlink" title="Build images"></a>Build images</h3><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker build [<span class="keyword">OPTIONS</span>] &lt;context path<span class="regexp">/url/</span>-&gt;</span><br><span class="line"></span><br><span class="line">docker build -t nginx:v1 .</span><br></pre></td></tr></table></figure>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker</span> pull webgoat/webgoat-<span class="number">8</span>.<span class="number">0</span></span><br><span class="line"><span class="attribute">docker</span> run -tp <span class="number">8080</span>:<span class="number">8080</span> webgoat/webgoat-<span class="number">9</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">docker pull acgpiano/sqli-labs</span><br><span class="line">docker run -dt --name sqli-lab -p [port you set]:<span class="number">80</span> acgpiano/sqli-labs:latest</span><br></pre></td></tr></table></figure>
+<h2 id="For-CTF"><a href="#For-CTF" class="headerlink" title="For CTF"></a>For CTF</h2><h3 id="no-dockerfile"><a href="#no-dockerfile" class="headerlink" title="no dockerfile"></a>no dockerfile</h3><p>If there is only front-end, you can use nginx to build the image.</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker search nginx</span><br><span class="line"></span><br><span class="line">docker pull xxx/nginx</span><br><span class="line"></span><br><span class="line">docker run --name &lt;container_name&gt; --volume <span class="string">&quot;$PWD/web0&quot;</span>:<span class="regexp">/usr/</span>share<span class="regexp">/nginx/</span>html -d -p <span class="number">5000</span>:<span class="number">80</span> nginx</span><br><span class="line"></span><br><span class="line">docker cp <span class="regexp">/var/</span>www<span class="regexp">/html/</span>filename container_id:<span class="regexp">/var/</span>www/html</span><br></pre></td></tr></table></figure>
+
+<p>php enviroment:<br>linux+apache+mysql+php</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker search lamp</span><br><span class="line"></span><br><span class="line">docker pull tutum/lamp</span><br><span class="line"></span><br><span class="line">docker run --name &lt;containerName&gt; -d -p <span class="number">2333</span>:<span class="number">80</span> -p <span class="number">3308</span>:<span class="number">3306</span> tutum/lamp</span><br><span class="line"></span><br><span class="line">docker cp <span class="regexp">/var/</span>www<span class="regexp">/html/</span>filename container_id:<span class="regexp">/var/</span>www/html</span><br></pre></td></tr></table></figure>
+
+<p>With database</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// Enter the container</span><br><span class="line">docker exec -it container_id /bin/bash</span><br><span class="line"></span><br><span class="line">// <span class="keyword">Connect</span> the <span class="keyword">database</span> <span class="keyword">and</span> there <span class="keyword">is</span> <span class="keyword">no</span> <span class="keyword">password</span> <span class="keyword">by</span> <span class="keyword">default</span></span><br><span class="line">mysql -u root</span><br><span class="line"></span><br><span class="line">// <span class="keyword">Create</span> <span class="keyword">database</span> <span class="keyword">and</span> use it</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> ctf;</span><br><span class="line">use ctf;</span><br><span class="line">// <span class="keyword">Create</span> the <span class="keyword">user</span> <span class="keyword">in</span> <span class="keyword">database</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="keyword">user</span>@localhost identified <span class="keyword">by</span> <span class="string">&#x27;pass&#x27;</span>;</span><br><span class="line"></span><br><span class="line">// allocate <span class="keyword">privileges</span> <span class="keyword">to</span> users</span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">privileges</span> <span class="keyword">on</span> <span class="keyword">database</span>.* <span class="keyword">to</span> <span class="keyword">user</span>@localhost;</span><br><span class="line"></span><br><span class="line">// <span class="keyword">refresh</span>/flush</span><br><span class="line">flush <span class="keyword">privileges</span>;</span><br></pre></td></tr></table></figure>
+<p>Or we can import the database by using <code>.sql</code> files.</p>
+<h3 id="Use-amp-Write-Dockerfile"><a href="#Use-amp-Write-Dockerfile" class="headerlink" title="Use &amp; Write Dockerfile"></a>Use &amp; Write Dockerfile</h3><blockquote>
+<p>FROM &lt;镜像&gt;<br>WORKDIR &lt;工作目录路径&gt;<br>COPY [–chown&#x3D;<user>:<group>] &lt;源路径1&gt;…  &lt;目标路径&gt;<br>RUN &lt;命令行命令&gt; docker构建时执行<br>CMD &lt;shell命令&gt;<br>EXPOSE &lt;对外开放的端口&gt;</p>
+</blockquote>
+<p>In the <code>directory</code> the dockerfile in</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t &lt;<span class="built_in">name</span>&gt; .</span><br></pre></td></tr></table></figure>
+
+<h3 id="docker-compose-yml"><a href="#docker-compose-yml" class="headerlink" title="docker-compose.yml"></a>docker-compose.yml</h3><p>Using <code>docker-compos.yml</code>, we can build </p>
+<p>Examples:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;3&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">web:</span></span><br><span class="line">    <span class="attr">build:</span> <span class="string">.</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">&quot;2333:80&quot;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2&#x27;</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="comment"># 基本环境</span></span><br><span class="line">  <span class="attr">service:</span> <span class="comment"># 容器名字</span></span><br><span class="line">    <span class="comment"># build 该置顶目录下的dockerfile</span></span><br><span class="line">    <span class="attr">build:</span> <span class="string">.</span></span><br><span class="line">    <span class="comment"># image指定build Dockerfile生成镜像的名称</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">imageName</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">2002</span><span class="string">:80</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>versioin：版本号<br>services：配置<br>web：自定义标签<br>build：以dockerfile类型启动容器，后跟dockerfile的路径</p>
+</blockquote>
+<p>Start it!</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">docker-compose up -d</span></span><br></pre></td></tr></table></figure>
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>License</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
 </div></section></div>
