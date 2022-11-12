@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='zh-CN'>
+<html lang='en'>
 
 <head>
   <meta name="generator" content="Hexo 6.0.0">
@@ -29,7 +29,7 @@
 <meta property="og:url" content="https://noname0519.com/2022/01/20/SSTI%E6%A8%A1%E6%9D%BF%E6%B3%A8%E5%85%A5/index.html">
 <meta property="og:site_name" content="Noname">
 <meta property="og:description" content="SSTI模板注入其实之前整理过了，但是题目难度今时不同往日了（x 主要以另外的方式记录一些新学习的payload、绕过限制的方式 python中的模板注入魔术方法1234567__dict__ 保存类实例或对象实例的属性变量键值对字典__class__ 返回类型所属的对象 __mro__ 返回一个包含对象所继承的基类元组，方法在解析时按照元组的顺序解析。__base__ 返回该对象所继承的基类 &#x2F;">
-<meta property="og:locale" content="zh_CN">
+<meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-01-20T03:01:16.000Z">
 <meta property="article:modified_time" content="2022-01-20T03:35:29.578Z">
 <meta property="article:author" content="Noname">
@@ -73,7 +73,7 @@
 <div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/img/avatar.jpg" onerror="javascript:this.classList.add('error');this.src='https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">Noname</div><div class="sub cap">Code for fun, Hack for world</div></a></div>
 
 
-<nav class="menu dis-select"><a class="nav-item active" href="/">文章</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/notes/">Notes</a><a class="nav-item" href="/about/">About</a></nav>
+<nav class="menu dis-select"><a class="nav-item active" href="/">Blog</a><a class="nav-item" href="/wiki/">Wiki</a><a class="nav-item" href="/links/">Link</a><a class="nav-item" href="/about/">About</a></nav>
 </header>
 
 
@@ -85,7 +85,7 @@
 
 
 </div>
-
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Noname0519" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.3/social/08a41b181ce68.svg"/></a></div></footer>
 
     </aside>
     <div class='l_main'>
@@ -94,7 +94,7 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-01-20T03:01:16.000Z">2022-01-20</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">Home</a><span class="sep"></span><a class="cap breadcrumb" href="/">Blog</a></div><div id="post-meta">Posted on&nbsp;<time datetime="2022-01-20T03:01:16.000Z">2022-01-20</time></div></div>
 
 <article class='content md post'>
 <h1 class="article-title"><span>SSTI模板注入</span></h1>
@@ -108,12 +108,12 @@
 
 <h3 id="绕过思路"><a href="#绕过思路" class="headerlink" title="绕过思路"></a>绕过思路</h3><h2 id="php中的模板注入"><a href="#php中的模板注入" class="headerlink" title="php中的模板注入"></a>php中的模板注入</h2><h2 id="java中的模板注入"><a href="#java中的模板注入" class="headerlink" title="java中的模板注入"></a>java中的模板注入</h2>
 
-<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>License</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
 </div></section></div>
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/01/20/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/">命令执行</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2022/01/20/SQL%E6%B3%A8%E5%85%A5-%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2%E5%8F%8A%E6%B3%A8%E5%85%A5%E5%A4%87%E5%BF%98/">SQL注入-基本查询及注入备忘</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">Newer</div><a href="/2022/01/20/%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/">命令执行</a></div><div class="item" id="next"><div class="note">Older</div><a href="/2022/01/20/SQL%E6%B3%A8%E5%85%A5-%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2%E5%8F%8A%E6%B3%A8%E5%85%A5%E5%A4%87%E5%BF%98/">SQL注入-基本查询及注入备忘</a></div></section></div>
 
 
 
@@ -231,11 +231,11 @@
   stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.15.1';
   stellar.config = {
     date_suffix: {
-      just: '刚刚',
-      min: '分钟前',
-      hour: '小时前',
-      day: '天前',
-      month: '个月前',
+      just: 'Just',
+      min: 'minutes ago',
+      hour: 'hours ago',
+      day: 'days ago',
+      month: 'months ago',
     },
   };
 
